@@ -5,25 +5,25 @@ public class Main {
 
         //for countOccurrence method
         String[] array = {"Word", "wood", "Name", "Earth", "Car", "WOOD", "Wood", "Dog", "Girl", "space", "WorD", "YouTube", "wood wood", "Andrew", "woodwood"};
-//        String word = "wood";
-//
-//        System.out.println(countOccurrence(array, word));
-//
+        String word = "wood";
+
+        System.out.println(countOccurrence(array, word));
+
 //        //for toList method
-//        System.out.println(toList(array));
+        System.out.println(toList(array));
 
         // for findUnique method
-//        ArrayList<Integer> numbers = new ArrayList<>();
-//        numbers.add(1);
-//        numbers.add(2);
-//        numbers.add(3);
-//        numbers.add(1);
-//        numbers.add(3);
-//        numbers.add(1);
-//        numbers.add(5);
-//        numbers.add(6);
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(1);
+        numbers.add(3);
+        numbers.add(1);
+        numbers.add(5);
+        numbers.add(6);
 
-//        System.out.println(findUnique(numbers));
+        System.out.println(findUnique(numbers));
 
         //for calcOccurrence method
         System.out.println(Arrays.toString(calcOccurrence(array)));
