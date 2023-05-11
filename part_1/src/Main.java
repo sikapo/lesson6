@@ -26,7 +26,7 @@ public class Main {
         System.out.println(findUnique(numbers));
 
         //for calcOccurrence method
-        System.out.println(Arrays.toString(calcOccurrence(array)));
+        System.out.println(calcOccurrence(array));
 
 
     }
@@ -57,7 +57,7 @@ public class Main {
         return unique;
     }
 
-    public static String [] calcOccurrence(String[] words) {
+    public static String calcOccurrence(String[] words) {
         int[] counterArray = new int[words.length];
 
         for (int i = 0; i < words.length; i++) {
@@ -67,10 +67,10 @@ public class Main {
                 }
             }
         }
-        String [] message = new String[words.length];
+        String message = "";
 
         for (int i = 0; i < words.length; i++) {
-            message [i] = words[i] + ": " + counterArray[i];
+            message = message + words[i] + ": " + counterArray[i] + "\n";
         }
         return message;
     }
