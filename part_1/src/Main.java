@@ -74,4 +74,9 @@ public class Main {
         }
         return message;
     }
+
+    public static String findOccurrence () {
+
+        return;
+    }
 }
