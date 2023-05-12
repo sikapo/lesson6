@@ -5,31 +5,31 @@ public class Main {
 
         //for countOccurrence method
         String[] array = {"Word", "wood", "Name", "Earth", "Car", "WOOD", "Wood", "Dog", "Girl", "space", "WorD", "YouTube", "wood wood", "Andrew", "woodwood"};
-        String word = "wood";
-
-        System.out.println(countOccurrence(array, word));
-
-        //for toList method
-        System.out.println(toList(array));
-
-        // for findUnique method
-        ArrayList<Integer> numbers = new ArrayList<>();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(1);
-        numbers.add(3);
-        numbers.add(1);
-        numbers.add(5);
-        numbers.add(6);
-
-        System.out.println(findUnique(numbers));
-
-        //for calcOccurrence method
-        System.out.println(calcOccurrence(array));
+//        String word = "wood";
+//
+//        System.out.println(countOccurrence(array, word));
+//
+//        //for toList method
+//        System.out.println(toList(array));
+//
+//        // for findUnique method
+//        ArrayList<Integer> numbers = new ArrayList<>();
+//        numbers.add(1);
+//        numbers.add(2);
+//        numbers.add(3);
+//        numbers.add(1);
+//        numbers.add(3);
+//        numbers.add(1);
+//        numbers.add(5);
+//        numbers.add(6);
+//
+//        System.out.println(findUnique(numbers));
+//
+//        //for calcOccurrence method
+//        System.out.println(calcOccurrence(array));
 
         //for findOccurrence method
-        System.out.println(Arrays.deepToString(findOccurrence(array)));
+        System.out.println(findOccurrence(array));
 
     }
 
@@ -77,17 +77,19 @@ public class Main {
         return message;
     }
 
-    public static String[][] findOccurrence (String[] words) {
-        String[][] occurrence = new String[words.length][1];
+    public static List<List<String>> findOccurrence (String[] words) {
+        List<List<String>> occurrenceMain = new ArrayList<>();
+        List<String> occurrence = new ArrayList<>();
+        occurrenceMain.add(occurrence);
         int[] counterArray = new int[words.length];
         for (int i = 0; i < words.length; i++) {
             for (int j = 0; j < words.length; j++) {
                 if(words[i].equalsIgnoreCase(words[j]) && i != j) {
                     counterArray[i]++;
                 }
-                occurrence[i][0] = "name: " + words[i] + ", occurrence: " + counterArray[i];
+                occurrenceMain.get(0).add(("name: " + words[i] + ", occurrenceMain: " + counterArray[i]));
             }
         }
-        return occurrence;
+        return occurrenceMain;
     }
 }
