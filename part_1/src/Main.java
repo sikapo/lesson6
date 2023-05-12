@@ -70,12 +70,12 @@ public class Main {
                 }
             }
         }
-        String message = "";
+        StringBuilder message = new StringBuilder();
 
         for (int i = 0; i < words.length; i++) {
-            message = message + words[i] + ": " + counterArray[i] + "\n";
+            message.append(words[i]).append(": ").append(counterArray[i]).append("\n");
         }
-        return message;
+        return message.toString();
     }
 
     public static List<List<String>> findOccurrence (String[] words) {
