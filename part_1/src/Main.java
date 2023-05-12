@@ -9,7 +9,7 @@ public class Main {
 
         System.out.println(countOccurrence(array, word));
 
-//        //for toList method
+        //for toList method
         System.out.println(toList(array));
 
         // for findUnique method
@@ -28,6 +28,8 @@ public class Main {
         //for calcOccurrence method
         System.out.println(calcOccurrence(array));
 
+        //for findOccurrence method
+        System.out.println(Arrays.deepToString(findOccurrence(array)));
 
     }
 
@@ -75,8 +77,17 @@ public class Main {
         return message;
     }
 
-    public static String findOccurrence () {
-
-        return;
+    public static String[][] findOccurrence (String[] words) {
+        String[][] occurrence = new String[words.length][1];
+        int[] counterArray = new int[words.length];
+        for (int i = 0; i < words.length; i++) {
+            for (int j = 0; j < words.length; j++) {
+                if(words[i].equalsIgnoreCase(words[j]) && i != j) {
+                    counterArray[i]++;
+                }
+                occurrence[i][0] = "name: " + words[i] + ", occurrence: " + counterArray[i];
+            }
+        }
+        return occurrence;
     }
 }
