@@ -18,5 +18,14 @@ public class Phonebook {
         }
         return null;
     }
+    public ArrayList<Record> findAll(String name){
+        ArrayList<Record> match = new ArrayList<>();
+        for (Record record: contacts) {
+            if (record.getContactName().equalsIgnoreCase(name)) {
+                match.add(record);
+            }
+        }
+        return match.isEmpty() ? null: match;
+    }
 }
 

@@ -1,8 +1,8 @@
 package phonebook;
 
 public class Record {
-    private String contactName;
-    private String phoneNumber;
+    private final String contactName;
+    private final String phoneNumber;
 
     public Record(String name, String number) {
         this.contactName = name;
