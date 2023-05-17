@@ -1,5 +1,96 @@
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
 
+        //for countOccurrence method
+        String[] array = {"Word", "wood", "Name", "Earth", "Car", "WOOD", "Wood", "Dog", "Girl", "space", "WorD", "YouTube", "wood wood", "Andrew", "woodwood"};
+        String word = "wood";
+
+        System.out.println("for countOccurrence method:" + "\n" + countOccurrence(array, word) + "\n");
+
+        //for toList method
+        System.out.println("for toList method:" + "\n" + toList(array) + "\n");
+
+        // for findUnique method
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(1);
+        numbers.add(3);
+        numbers.add(1);
+        numbers.add(5);
+        numbers.add(6);
+
+        System.out.println("for findUnique method:" + "\n" + findUnique(numbers) + "\n");
+
+
+        //for calcOccurrence method
+        System.out.println( "for calcOccurrence method:" + "\n" + calcOccurrence(array) + "\n");
+
+        //for findOccurrence method
+        System.out.println("for findOccurrence method:" + "\n" + findOccurrence(array) + "\n");
+
+    }
+
+    public static int countOccurrence(String[] list, String word) {
+        int counter = 0;
+        for (String target : list) {
+            if (target.equalsIgnoreCase(word)) {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    public static List<String> toList(String[] array) {
+
+        return new ArrayList<>(Arrays.asList(array));
+
+    }
+
+    public static ArrayList<Integer> findUnique(ArrayList<Integer> list) {
+        ArrayList<Integer> unique = new ArrayList<>();
+        for (int hand : list) {
+            if (!unique.contains(hand)) {
+                unique.add(hand);
+            }
+        }
+        return unique;
+    }
+
+    public static String calcOccurrence(String[] words) {
+        int[] counterArray = new int[words.length];
+
+        for (int i = 0; i < words.length; i++) {
+            for (int j = 0; j < words.length; j++) {
+                if(words[i].equalsIgnoreCase(words[j]) && i != j) {
+                    counterArray[i]++;
+                }
+            }
+        }
+        StringBuilder message = new StringBuilder();
+
+        for (int i = 0; i < words.length; i++) {
+            message.append(words[i]).append(": ").append(counterArray[i]).append("\n");
+        }
+        return message.toString();
+    }
+
+    public static List<List<String>> findOccurrence (String[] words) {
+        List<List<String>> occurrenceMain = new ArrayList<>();
+        List<String> occurrence = new ArrayList<>();
+        occurrenceMain.add(occurrence);
+        int[] counterArray = new int[words.length];
+        for (int i = 0; i < words.length; i++) {
+            for (int j = 0; j < words.length; j++) {
+                if(words[i].equalsIgnoreCase(words[j]) && i != j) {
+                    counterArray[i]++;
+                }
+                occurrenceMain.get(0).add(("name: " + words[i] + ", occurrenceMain: " + counterArray[i]));
+            }
+        }
+        return occurrenceMain;
     }
 }
